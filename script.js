@@ -73,3 +73,13 @@ colorAllbtn.addEventListener("click", () => {
     cell.style.backgroundColor = selectColor().toLowerCase();
   }
 });
+
+let clearAllbtn = document.getElementById("clearAllCells");
+clearAllbtn.addEventListener("click", () => {
+  let cells = table.getElementsByTagName("TD");
+
+  for (let i = 0; i < cells.length; i++) {
+    const cell = cells[i];
+    cell.style.backgroundColor = "#f2f2f2";
+  }
+});
