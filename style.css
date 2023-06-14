@@ -14,3 +14,8 @@ table td {
   width: 10px;
   height: 25px;
 }
+table th {
+  background-color: #8f8e8e;
+  color: white;
+  border: 2px solid black;
+}

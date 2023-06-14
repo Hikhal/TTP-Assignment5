@@ -83,3 +83,27 @@ clearAllbtn.addEventListener("click", () => {
     cell.style.backgroundColor = "#f2f2f2";
   }
 });
+
+let isDragging = false;
+
+table.addEventListener("mousedown", (event) => {
+  if (event.target.tagName === "TD") {
+    isDragging = true;
+    event.target.style.backgroundColor = selectColor();
+  }
+});
+
+table.addEventListener("mouseover", (event) => {
+  if (isDragging && event.target.tagName === "TD") {
+    event.target.style.backgroundColor = selectColor();
+  }
+});
+
+table.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+// To stop coloring cells when the mouse is released outside of a cell
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+});
