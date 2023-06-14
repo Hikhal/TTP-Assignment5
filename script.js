@@ -50,3 +50,16 @@ table.addEventListener("click", (event) => {
     cell.style.backgroundColor = selectColor().toLowerCase();
   }
 });
+
+let uncolorbtn = document.getElementById("colorUncolorCells");
+uncolorbtn.addEventListener("click", () => {
+  let cells = table.getElementsByTagName("TD");
+
+  for (let i = 0; i < cells.length; i++) {
+    const cell = cells[i];
+
+    if (!cell.style.backgroundColor) {
+      cell.style.backgroundColor = selectColor().toLowerCase();
+    }
+  }
+});
