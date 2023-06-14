@@ -1,5 +1,9 @@
 let table = document.getElementById("grid");
 
+// The 'addRow' method adds a new row to a table that has already been defined. With 'table.rows[0].cells.length', it initially returns the number of cells (which stand for columns) in the table's first row.
+// After that, it uses table.insertRow() to add a new row to the end of the table and stores a reference to it in the 'row' variable.
+// The final step involves running a loop equal to the number of columns, inserting a new cell into the new row with 'row.insertCell()' for each iteration, and setting the innerHTML of that new cell to an empty string to show that the new cells are initially empty.
+
 function addRow() {
   let columns = table.rows[0].cells.length;
   let row = table.insertRow();
@@ -8,6 +12,10 @@ function addRow() {
     cell.innerHTML = "";
   }
 }
+
+// The 'addColumn' method is used to add a new column to a table that already has one. 'table.rows.length' is used to count the number of rows in the table, and the result is saved in the 'rows' variable.
+// After that, the method starts a loop that iterates through each row of the table. It uses 'table.rows[i]' to get the current row for each iteration and stores the result in the 'row' variable. 
+// Then, using the function "row.insertCell()," it adds a new cell at the end of the current row, storing a reference to it in the "cell" variable. //Finally, the function indicates that the new cells are initially empty by setting the innerHTML of the new cell to an empty string.
 
 function addColumn() {
   let rows = table.rows.length;
