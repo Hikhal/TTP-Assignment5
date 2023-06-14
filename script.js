@@ -18,10 +18,21 @@ function addColumn(){
     }
 }
 
-
 function removeRow(){
     let rows = table.rows.length
     if(rows > 1){
         table.deleteRow(rows - 1)
     }
 }
+
+function removeCol(){
+    let rows = table.rows.length
+    if(rows > 0){
+        let columns = table.rows[0].cells.length
+        for(let i = 0; i < rows; i++){
+            table.rows[i].deleteCell(columns - 1)
+        }
+    }
+}
+
+
