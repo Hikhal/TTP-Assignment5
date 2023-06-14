@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- html table-->
-    <table id="grid">
-      <tr>
-        <td>Table</td>
-      </tr>
-    </table>
-    <button id="addrow" onclick="addRow()">Add Row</button>
-    <button id="addcolumn" onclick="addColumn()">Add Column</button>
-    <button id="removerow" onclick="removeRow()">Remove Row</button>
-    <button id="removecolumn">Remove Column</button>
 
-    <script src="script.js"></script>
-  </body>
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- html table-->
+  <table id="grid">
+    <tr>
+      <td>Table</td>
+    </tr>
+  </table>
+  <button id="addrow" onclick="addRow()">Add Row</button>
+  <button id="addcolumn" onclick="addColumn()">Add Column</button>
+  <button id="removerow" onclick="removeRow()">Remove Row</button>
+  <button id="removecolumn">Remove Column</button>
+
+  <select id="dropdown" onchange="selectColor()">
+    <option value="red">Default</option>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="yellow">Yellow</option>
+  </select>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
