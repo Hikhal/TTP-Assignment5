@@ -63,3 +63,13 @@ uncolorbtn.addEventListener("click", () => {
     }
   }
 });
+
+let colorAllbtn = document.getElementById("colorAllCells");
+colorAllbtn.addEventListener("click", () => {
+  let cells = table.getElementsByTagName("TD");
+
+  for (let i = 0; i < cells.length; i++) {
+    const cell = cells[i];
+    cell.style.backgroundColor = selectColor().toLowerCase();
+  }
+});
