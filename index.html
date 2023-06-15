@@ -6,30 +6,33 @@
   </head>
   <body>
     <!-- html table-->
+    <h1>GRAPH GENERATOR</h1>
     <table id="grid">
-      <thead>
-        <th>Cells</th>
-      </thead>
+      <!-- <thead>
+        <th></th>
+      </thead> -->
       <tr>
-        <td>Table</td>
+        <td></td>
       </tr>
     </table>
-    <button id="addrow" onclick="addRow()">Add Row</button>
-    <button id="addcolumn" onclick="addColumn()">Add Column</button>
-    <button id="removerow" onclick="removeRow()">Remove Row</button>
-    <button id="removecolumn" onclick="removeCol()">Remove Column</button>
+    <div class="button-container">
+      <button id="addrow" onclick="addRow()">Add Row</button>
+      <button id="addcolumn" onclick="addColumn()">Add Column</button>
+      <button id="removerow" onclick="removeRow()">Remove Row</button>
+      <button id="removecolumn" onclick="removeCol()">Remove Column</button>
 
-    <select id="dropdown" onchange="selectColor()">
-      <option value="red">Default</option>
-      <option value="red">Red</option>
-      <option value="blue">Blue</option>
-      <option value="green">Green</option>
-      <option value="yellow">Yellow</option>
-    </select>
+      <select id="dropdown" onchange="selectColor()">
+        <option value="red">Default</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+      </select>
 
-    <button id="colorUncolorCells">Color Uncolored Cells</button>
-    <button id="colorAllCells">Color All Cells</button>
-    <button id="clearAllCells">Clear All Cells</button>
+      <button id="colorUncolorCells">Color Uncolored Cells</button>
+      <button id="colorAllCells">Color All Cells</button>
+      <button id="clearAllCells">Clear All Cells</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
