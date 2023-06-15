@@ -26,66 +26,82 @@ function addColumn() {
   }
 }
 
+// Remove last row
 function removeRow() {
   let rows = table.rows.length;
+  // If amount of rows is still higher than one
   if (rows > 1) {
+    // Delete one row
     table.deleteRow(rows - 1);
   }
 }
 
+// Remove last column
 function removeCol() {
   let rows = table.rows.length;
+  // As long as theres at least one row
   if (rows > 0) {
     let columns = table.rows[0].cells.length;
+    // For each row
     for (let i = 0; i < rows; i++) {
+      // Delete last cell in the row
       table.rows[i].deleteCell(columns - 1);
     }
   }
 }
 
+// Returns selected color from dropdown
 function selectColor() {
   let dropdown = document.getElementById("dropdown");
-  // Public variable
   newColor = dropdown.value;
 
   return newColor;
 }
 
+// Listens for click on cell
 table.addEventListener("click", (event) => {
   let cell = event.target;
 
+  // Sets color of cell to selected dropdown function color
   if (cell.tagName === "TD") {
     cell.style.backgroundColor = selectColor().toLowerCase();
   }
 });
 
+// Listens for colorUncolorCells button
 let uncolorbtn = document.getElementById("colorUncolorCells");
 uncolorbtn.addEventListener("click", () => {
   let cells = table.getElementsByTagName("TD");
 
+  // Go through every cell
   for (let i = 0; i < cells.length; i++) {
     const cell = cells[i];
 
+    // If the cell doesnt have color then it changes to selected dropdown function color
     if (!cell.style.backgroundColor) {
       cell.style.backgroundColor = selectColor().toLowerCase();
     }
   }
 });
 
+// Listens for colorAllCells button
 let colorAllbtn = document.getElementById("colorAllCells");
 colorAllbtn.addEventListener("click", () => {
   let cells = table.getElementsByTagName("TD");
 
+  // Every cell gets set to color selected from dropdown function
   for (let i = 0; i < cells.length; i++) {
     const cell = cells[i];
     cell.style.backgroundColor = selectColor().toLowerCase();
   }
 });
 
+// Listens for clearAllCells button
 let clearAllbtn = document.getElementById("clearAllCells");
 clearAllbtn.addEventListener("click", () => {
   let cells = table.getElementsByTagName("TD");
 
+  // Set default color for every cell
   for (let i = 0; i < cells.length; i++) {
     const cell = cells[i];
     cell.style.backgroundColor = "#f2f2f2";
@@ -94,20 +110,25 @@ clearAllbtn.addEventListener("click", () => {
 
 let isDragging = false;
 
+// Listens for mouseover 
 table.addEventListener("mousedown", (event) => {
+  // If its over the table
   if (event.target.tagName === "TD") {
+    // It is being dragged, set the color of the selected cell
     isDragging = true;
     event.target.style.backgroundColor = selectColor();
   }
 });
 
 table.addEventListener("mouseover", (event) => {
+  // If being dragged within target cell, set its color given from the function
   if (isDragging && event.target.tagName === "TD") {
     event.target.style.backgroundColor = selectColor();
   }
 });
 
 table.addEventListener("mouseup", () => {
+  // No longer being dragged so set it to false
   isDragging = false;
 });
 
